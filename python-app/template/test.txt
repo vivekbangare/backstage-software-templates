@@ -1,4 +1,4 @@
 This is test file:
 
-My application name is : {{values.app_name}}
-This is my ENV: {{values.app_env}}
+My application name is : ${{ values.app_name }}
+This is my ENV: ${{ values.app_env }}
