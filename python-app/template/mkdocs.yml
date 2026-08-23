@@ -1,0 +1,10 @@
+site_name: '${{ values.app_name }}'
+site_description: 'Main documentation site for the ${{ values.app_name }} project.'
+repo_url: https://github.com/vivekbangare/${{ values.app_name }}
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+nav:
+  - Overview: 
+      - Getting started: 'docs/index.md'

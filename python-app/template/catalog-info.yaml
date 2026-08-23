@@ -1,11 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.app_name}}
-  description: Python app that displays time, named ${{ values.app_name }}
+  name: ${{ values.app_name }}
+  description: Python flask application displaying system information and health check endpoint - named as ${{ values.app_name }} and environment ${{ values.app_env }}.
   # Example for optional annotations
   annotations:
     github.com/project-slug: vivekbangare/${{ values.app_name }}
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development-team
