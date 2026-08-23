@@ -4,7 +4,7 @@ image:
   repository: vivekbangare01/${{ values.app_name }}
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "${{values.app_name}}-{{values.app_env}}-latest"
+  tag: "${{values.app_name}}-${{values.app_env}}-latest"
 
 resources:
   requests:
