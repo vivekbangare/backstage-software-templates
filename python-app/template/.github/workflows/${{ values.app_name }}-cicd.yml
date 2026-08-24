@@ -98,4 +98,13 @@ jobs:
             --username admin \
             --password "${{ '${{ secrets.ARGOCD_PASSWORD }}' }}"
 
+          argocd app get ${{ values.app_name }} >/dev/null 2>&1 || \
+          argocd app create ${{ values.app_name }} \
+            --repo https://github.com/vivekbangare/${{ values.app_name }}.git \
+            --path charts/${{ values.app_name }} \
+            --revision main \
+            --dest-server https://kubernetes.default.svc \
+            --dest-namespace default \
+            --values values-${{ values.app_env }}.yaml
+
           argocd app sync ${{ values.app_name }}
