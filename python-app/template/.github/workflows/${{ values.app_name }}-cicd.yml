@@ -100,7 +100,7 @@ jobs:
 
           argocd app get ${{ values.app_name }} >/dev/null 2>&1 || \
           argocd app create ${{ values.app_name }} \
-            --repo https://github.com/vivekbangare/${{ values.app_name }}.git \
+            --repo https://github.com/clouddevopstechie/${{ values.app_name }}.git \
             --path charts/${{ values.app_name }} \
             --revision main \
             --dest-server https://kubernetes.default.svc \
