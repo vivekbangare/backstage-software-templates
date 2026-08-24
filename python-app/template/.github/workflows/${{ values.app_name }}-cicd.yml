@@ -105,6 +105,9 @@ jobs:
             --revision main \
             --dest-server https://kubernetes.default.svc \
             --dest-namespace default \
+            --sync-option CreateNamespace=true \
+            --sync-policy manual \
             --values values-${{ values.app_env }}.yaml
 
           argocd app sync ${{ values.app_name }}
+          argocd app wait ${{ values.app_name }} --health --timeout 300
